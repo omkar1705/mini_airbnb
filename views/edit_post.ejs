@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit post</title>
+</head>
+<body>
+    <h2>create a new listing</h2>
+    <form action="/listing/edit/<%=listing._id%>?_method=patch" method="post">
+        <input type="text" name="listing[title]" placeholder="enter the title of the post" value="<%= listing.title %>">
+        <br><br>
+        <textarea name="listing[description]" placeholder="enter the discription of the post"><%= listing.description %>"</textarea>
+        <br><br>
+        <input type="number" name="listing[price]" placeholder="enter the price of the post" value="<%= listing.price %>"><br><br>
+        <input type="text" name="listing[image]" placeholder="enter the url of the post images" value="<%= listing.image %>"><br><br>
+        <input type="text" name="listing[location]" placeholder="enter the location of the post" value="<%= listing.location %>"><br><br>
+        <input type="text" name="listing[country]" placeholder="enter the country of the post" value="<%= listing.country %>"><br><br>
+        <button>click to</button>
+    </form>
+</body>
+</html>
