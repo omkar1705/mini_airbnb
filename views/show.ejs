@@ -1,17 +1,31 @@
 <% layout("/layouts/boilerplate") %>
-<body>
-    <h3>listing detail</h3>
-    <ul>
-        <li><%=listing.title%></li>
-        <li><%=listing.description%></li>
-        <li>&#8377 <%=listing.price.toLocaleString('en-IN')%></li>
-        <li><%=listing.location%></li>
-        <li><%=listing.country%></li>
-    </ul>
-    <form action="/listing/edit/<%= listing._id %>">
-        <button>edit</button>
-    </form>
-    <form action="/listing/<%= listing._id %>?_method=delete" method="post">
-        <button>delet post</button>
-    </form>
-</body>
+<h3>listing detail</h3>
+    <div class="card" style="width: 100%;">
+        <div class="row">
+            <div class="offset-3">
+        <img src="<%=listing.image%>" class="card-img-top show-img" alt="image of the place">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title"><%=listing.title%></h5>
+          <p class="card-text card-des"><%=listing.description%></p>
+          <p class="card-text card-price">&#8377 <%=listing.price.toLocaleString('en-IN')%></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%=listing.location%></li>
+          <li class="list-group-item"><%=listing.country%></li>
+          <li class="list-group-item"></li>
+        </ul>
+        <div class="card-body">
+            <div class="row show-anchers">
+                <div class="col-md-4">
+                    <a href="/listing/edit/<%= listing._id %>" class="card-link">Edit listing</a>
+                </div>
+                <div class="col-md-8" >
+                    <form action="/listing/<%= listing._id %>?_method=delete" method="post">
+                        <a onclick="this.parentNode.submit();" class="card-link" >Delete listing</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
