@@ -1,31 +1,42 @@
 <% layout("/layouts/boilerplate") %>
-
-    <body>
-        <h1>all listings</h1>
-        <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
-            <% for (const listing of listings) { %>
-                <a href="/listing/<%=listing._id%>" class="card-a">
-                    <div class="card col" style="width: 20rem;">
-                        <img src="<%= listing.image%>" class="card-img-top" alt="listing image" style="height: 20rem;">
-                        <div class="card-body">
-                            <p class="card-text">
-                            <div class="card-title">
-                                <b>
-                                    <%=listing.title%>
-                                </b>
-                            </div>
-                            <hr>
-                            <div class="card-des">
-                                <%=listing.description%>
-                            </div>
-                            <br>
-                            <div class="card-price">
-                                &#8377 <%=listing.price.toLocaleString('en-IN')%>
-                            </div>
-                            </p>
-                        </div>
-                    </div>
-                </a>
-                <% } %>
+    <% if (flash.success) { %>
+        <div class="alert alert-warning alert-dismissible fade show col-6 offset-3" id="flash-message" role="alert">
+            <%= flash.success %>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    </body>
+        <% } %>
+            <% if (flash.error) { %>
+                <div class="alert alert-danger alert-dismissible fade show col-6 offset-3" id="flash-message"
+                    role="alert">
+                    <%= flash.error %>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <% } %>
+                    <h1>all listings</h1>
+                    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+                        <% for (const listing of listings) { %>
+                            <a href="/listing/<%=listing._id%>" class="card-a">
+                                <div class="card col" style="width: 20rem;">
+                                    <img src="<%= listing.image%>" class="card-img-top" alt="listing image"
+                                        style="height: 20rem;">
+                                    <div class="card-body">
+                                        <p class="card-text">
+                                        <div class="card-title">
+                                            <b>
+                                                <%=listing.title%>
+                                            </b>
+                                        </div>
+                                        <hr>
+                                        <div class="card-des">
+                                            <%=listing.description%>
+                                        </div>
+                                        <br>
+                                        <div class="card-price">
+                                            &#8377 <%=listing.price.toLocaleString('en-IN')%>
+                                        </div>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <% } %>
+                    </div>

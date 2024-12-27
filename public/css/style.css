@@ -197,3 +197,8 @@ body {
     text-decoration: none;
     color: #fe424d;
 }
+
+.alert {
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}

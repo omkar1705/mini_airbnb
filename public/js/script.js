@@ -79,3 +79,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+//alert disappers
+setTimeout(() => {
+  const flashMessage = document.getElementById('flash-message');
+  if (flashMessage) {
+    flashMessage.style.transition = "opacity 0.5s";
+    flashMessage.style.opacity = 0;
+    setTimeout(() => flashMessage.remove(), 500); // Remove it after fading out
+  }
+}, 3000); // 3000ms = 3 seconds
