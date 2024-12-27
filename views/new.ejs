@@ -1,37 +1,42 @@
 <% layout("/layouts/boilerplate") %>
-<br><br>
-<h2>create a new listing</h2>
-<div class="row">
-    <div class="col-8 offset-2">
-    <form action="/listing" method="post" novalidate class="needs-validation">
-        <div>
-            <label for="new-title" class="form-label">Email address</label>
-            <input type="text" class="form-control" id="new-title" name="listing[title]" placeholder="enter the title of the post" required>
-            <br>
-            <label for="new-des" class="form-label">Description</label>
-            <textarea name="listing[description]" class="form-control" id="new-des" placeholder="enter the discription of the post" required></textarea>
-            <br>
-            <label for="new-price" class="form-price">Price</label>
-            <input type="number" class="form-control" id="new-price" name="listing[price]" placeholder="enter the price of the post" required>
-            <br>
-            <label for="new-image" class="form-label">Image url</label>
-            <input type="text" class="form-control" id="new-image" name="listing[image]" placeholder="enter the url of the post images">
-            <br>
-            <div class="row">
-                <div class="col-md-4">
-                    <label for="new-loc" class="form-label">location</label>
-                    <input type="text" class="form-control" id="new-loc" name="listing[location]" placeholder="enter the location of the post" required>
+    <br><br>
+    <h2>create a new listing</h2>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <form action="/listing" method="post" novalidate class="needs-validation">
+                <div>
+                    <label for="new-title" class="form-label">Email address</label>
+                    <input type="text" class="form-control" id="new-title" name="listing[title]"
+                        placeholder="enter the title of the post" required>
+                    <br>
+                    <label for="new-des" class="form-label">Description</label>
+                    <textarea name="listing[description]" class="form-control" id="new-des"
+                        placeholder="enter the discription of the post" required></textarea>
+                    <br>
+                    <label for="new-price" class="form-price">Price</label>
+                    <input type="number" class="form-control" id="new-price" name="listing[price]"
+                        placeholder="enter the price of the post" required>
+                    <br>
+                    <label for="new-image" class="form-label">Image url</label>
+                    <input type="text" class="form-control" id="new-image" name="listing[image]"
+                        placeholder="enter the url of the post images">
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="new-loc" class="form-label">location</label>
+                            <input type="text" class="form-control" id="new-loc" name="listing[location]"
+                                placeholder="enter the location of the post" required>
+                        </div>
+                        <div class="col-md-8">
+                            <label for="new-country" class="form-label">Country</label>
+                            <input type="text" class="form-control" id="new-country" name="listing[country]"
+                                placeholder="enter the country of the post" required>
+                        </div>
+                    </div>
+                    <br>
+                    <button class="btn btn-dark">click to submit</button>
+                    <br><br><br>
                 </div>
-                <div class="col-md-8">
-                    <label for="new-country" class="form-label">Country</label>
-                    <input type="text" class="form-control" id="new-country" name="listing[country]" placeholder="enter the country of the post" required>
-                </div>
-            </div>
-            <br>
-            <button class="btn btn-dark">click to submit</button>
-            <br><br><br>
+            </form>
+        </div>
     </div>
-    </form>
-</div>
-</div>
-

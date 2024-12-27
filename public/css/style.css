@@ -1,103 +1,199 @@
-
-body{
+body {
     background-color: antiquewhite;
-        font-family: "Plus Jakarta Sans", serif !important;
-        font-optical-sizing: auto !important;
-        font-weight: 400 !important;
-        font-style: normal !important;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
+    font-family: "Plus Jakarta Sans", serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 
 }
-.container{
+
+.container {
     flex: 1;
 }
-.navbar{
+
+.navbar {
     height: 5rem;
 }
-.fa-compass{
+
+.fa-compass {
     color: #fe424d;
     font-size: 3rem;
 }
 
-.nav-link{
+.nav-link {
     color: rgb(0, 0, 0) !important;
 }
 
 
-.f-info-links a{
+.f-info-links a {
     text-decoration: none;
     color: #222222;
 }
-.f-info-links a:hover{
-    text-decoration: underline ;
+
+.f-info-links a:hover {
+    text-decoration: underline;
     color: #222222;
 }
-.f-info-links{
+
+.f-info-links {
     width: 100%;
     display: flex;
     justify-content: center;
-    vertical-align :middle;
+    vertical-align: middle;
     align-items: center;
 
 }
-.f-info-social{
+
+.f-info-social {
     font-size: large;
     width: 100%;
     display: flex;
     justify-content: center;
-    vertical-align :middle;
+    vertical-align: middle;
     align-items: center;
 }
-.f-info-social i{
+
+.f-info-social i {
     padding: 0vw 1vw;
 }
-.f-info{
+
+.f-info {
     text-align: center;
-    display:flex;
+    display: flex;
     justify-content: center;
     height: 6rem;
     background-color: #ebebeb;
     flex-wrap: wrap;
     align-items: center;
 }
-.card-title{
+
+.card-title {
     font-size: large !important;
     font-size: large !important;
 }
-.card-des{
-    color:rgba(0, 0, 0, 0.6) !important ;
+
+.card-des {
+    color: rgba(0, 0, 0, 0.6) !important;
 }
-.card{
+
+.card {
     border: none !important;
     margin-bottom: 3rem;
 }
 
-.card-img-top{
+.card-img-top {
     border-radius: 1rem !important;
     width: 100% !important;
 }
 
-.card-body{
+.card-body {
     padding: 0px !important;
 }
 
-.card-a{
+.card-a {
     text-decoration: none;
     transition: transform .5s
 }
 
-.card-a:hover{
+.card-a:hover {
     transform: scale(1.05);
 }
 
 
-.show-img{
+.show-img {
     height: 70vh;
     width: 50% !important;
 }
 
-.show-anchers a{
+.show-anchers a {
     text-decoration: none;
+}
+
+
+/* star review */
+
+.card-rating {
+    width: 100%;
+}
+
+.star {
+    font-size: 5vh;
+    cursor: pointer;
+}
+
+.one {
+    color: rgb(255, 0, 0);
+}
+
+.two {
+    color: rgb(255, 106, 0);
+}
+
+.three {
+    color: rgb(251, 255, 120);
+}
+
+.four {
+    color: rgb(255, 255, 0);
+}
+
+.five {
+    color: rgb(24, 159, 14);
+}
+
+
+.review-input {
+    width: 100%;
+}
+
+/* rating display  */
+.rating-container {
+    display: inline-block;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.rating {
+    font-size: 30px;
+    display: inline-flex;
+    /* Align stars in a row */
+    direction: ltr;
+    /* Ensure left-to-right layout */
+}
+
+.rating span {
+    padding-top: 6px;
+    font-size: 28px;
+
+    /* Size of the stars */
+    color: #ddd;
+    /* Default empty star color */
+}
+
+.rating span.filled {
+    color: gold;
+    /* Filled star color */
+}
+
+
+.review-card {
+    display: flex;
+    justify-content: space-around;
+}
+
+.rating-status {
+    padding-top: 15px;
+}
+
+.dis-card-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dis-card-title a {
+    text-decoration: none;
+    color: #fe424d;
 }
