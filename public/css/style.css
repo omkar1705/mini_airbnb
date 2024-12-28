@@ -202,3 +202,7 @@ body {
     opacity: 1;
     transition: opacity 0.5s ease-out;
 }
+
+.review_auther h6 {
+    float: right;
+}

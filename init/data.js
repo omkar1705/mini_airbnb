@@ -8,6 +8,7 @@ const sampleListings = [
     location: "Malibu",
     country: "United States",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Modern Loft in Downtown",
@@ -18,6 +19,7 @@ const sampleListings = [
     location: "New York City",
     country: "United States",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Mountain Retreat",
@@ -28,6 +30,7 @@ const sampleListings = [
     location: "Aspen",
     country: "United States",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Historic Villa in Tuscany",
@@ -39,6 +42,7 @@ const sampleListings = [
     location: "Florence",
     country: "Italy",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Secluded Treehouse Getaway",
@@ -50,6 +54,7 @@ const sampleListings = [
     location: "Portland",
     country: "United States",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Beachfront Paradise",
@@ -61,6 +66,7 @@ const sampleListings = [
     location: "Cancun",
     country: "Mexico",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Rustic Cabin by the Lake",
@@ -72,6 +78,7 @@ const sampleListings = [
     location: "Lake Tahoe",
     country: "United States",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Luxury Penthouse with City Views",
@@ -83,6 +90,7 @@ const sampleListings = [
     location: "Los Angeles",
     country: "United States",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Ski-In/Ski-Out Chalet",
@@ -94,6 +102,7 @@ const sampleListings = [
     location: "Verbier",
     country: "Switzerland",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Safari Lodge in the Serengeti",
@@ -105,6 +114,7 @@ const sampleListings = [
     location: "Serengeti National Park",
     country: "Tanzania",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Historic Canal House",
@@ -116,6 +126,7 @@ const sampleListings = [
     location: "Amsterdam",
     country: "Netherlands",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Private Island Retreat",
@@ -127,6 +138,7 @@ const sampleListings = [
     location: "Fiji",
     country: "Fiji",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Charming Cottage in the Cotswolds",
@@ -138,6 +150,7 @@ const sampleListings = [
     location: "Cotswolds",
     country: "United Kingdom",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Historic Brownstone in Boston",
@@ -149,6 +162,7 @@ const sampleListings = [
     location: "Boston",
     country: "United States",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Beachfront Bungalow in Bali",
@@ -160,6 +174,7 @@ const sampleListings = [
     location: "Bali",
     country: "Indonesia",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Mountain View Cabin in Banff",
@@ -171,6 +186,7 @@ const sampleListings = [
     location: "Banff",
     country: "Canada",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Art Deco Apartment in Miami",
@@ -182,6 +198,7 @@ const sampleListings = [
     location: "Miami",
     country: "United States",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Tropical Villa in Phuket",
@@ -193,6 +210,7 @@ const sampleListings = [
     location: "Phuket",
     country: "Thailand",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Historic Castle in Scotland",
@@ -204,6 +222,7 @@ const sampleListings = [
     location: "Scottish Highlands",
     country: "United Kingdom",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Desert Oasis in Dubai",
@@ -215,6 +234,7 @@ const sampleListings = [
     location: "Dubai",
     country: "United Arab Emirates",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Rustic Log Cabin in Montana",
@@ -226,6 +246,7 @@ const sampleListings = [
     location: "Montana",
     country: "United States",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Beachfront Villa in Greece",
@@ -237,6 +258,7 @@ const sampleListings = [
     location: "Mykonos",
     country: "Greece",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Eco-Friendly Treehouse Retreat",
@@ -248,6 +270,7 @@ const sampleListings = [
     location: "Costa Rica",
     country: "Costa Rica",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Historic Cottage in Charleston",
@@ -259,6 +282,7 @@ const sampleListings = [
     location: "Charleston",
     country: "United States",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Modern Apartment in Tokyo",
@@ -270,6 +294,7 @@ const sampleListings = [
     location: "Tokyo",
     country: "Japan",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Lakefront Cabin in New Hampshire",
@@ -281,6 +306,7 @@ const sampleListings = [
     location: "New Hampshire",
     country: "United States",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Luxury Villa in the Maldives",
@@ -292,6 +318,7 @@ const sampleListings = [
     location: "Maldives",
     country: "Maldives",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Ski Chalet in Aspen",
@@ -303,6 +330,7 @@ const sampleListings = [
     location: "Aspen",
     country: "United States",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
   {
     title: "Secluded Beach House in Costa Rica",
@@ -314,6 +342,7 @@ const sampleListings = [
     location: "Costa Rica",
     country: "Costa Rica",
     review: [],
+    owner: "676fb91f90d094002e83cae2",
   },
 ];
 

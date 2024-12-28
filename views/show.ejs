@@ -13,8 +13,13 @@
                         </h2>
                         <img src="<%=listing.image%>" class="card-img-top show-img" alt="image of the place">
                     </div>
+                    <div class="owner card-des offset-10">
+                        <h6><i>
+                                created by @<%=listing.owner.username %>
+                            </i>
+                        </h6>
+                    </div>
                     <div class="card-body">
-                        <!-- <h5 class="card-title"><%=listing.title%></h5> -->
                         <p class="card-text card-des">
                             <%=listing.description%>
                         </p>
@@ -30,85 +35,100 @@
                         <li class="list-group-item"></li>
                     </ul>
                     <div class="card-body">
-                        <div class="row show-anchers">
-                            <div class="col-md-4">
-                                <a href="/listing/edit/<%= listing._id %>" class="card-link">Edit listing</a>
-                            </div>
-                            <div class="col-md-8">
-                                <form action="/listing/<%= listing._id %>?_method=delete" method="post">
-                                    <a onclick="this.parentNode.submit();" class="card-link">Delete listing</a>
-                                </form>
-                            </div>
-                        </div>
-                        <br><br>
-                        <div class="review col-md-8">
-                            <form action="/listing/<%=listing._id%>/reviews" method="post" novalidate
-                                class="needs-validation">
-                                <label for="review" class="form-label">
-                                    <h5>Leave a review</h5>
-                                </label>
-                                <textarea name="review[comment]" class="form-control " id="review" rows="3"
-                                    required></textarea>
-                                <div class="card-rating">
-                                    <span onclick="gfg(1)" class="star">★
-                                    </span>
-                                    <span onclick="gfg(2)" class="star">★
-                                    </span>
-                                    <span onclick="gfg(3)" class="star">★
-                                    </span>
-                                    <span onclick="gfg(4)" class="star">★
-                                    </span>
-                                    <span onclick="gfg(5)" class="star">★
-                                    </span>
-                                    <input type="hidden" id="ratingInput" name="review[rating]" value="0">
-                                    <h6 id="output">
-                                        Rating is: 0/5
-                                    </h6>
-                                    <button class="btn-dark offset-4">submit
-                                    </button>
+                        <% if(user && user._id.equals(listing.owner._id)) {%>
+                            <div class="row show-anchers">
+                                <div class="col-md-4">
+                                    <a href="/listing/edit/<%= listing._id %>" class="card-link">Edit listing</a>
                                 </div>
-                            </form>
-                        </div>
-                        <br>
-                        <hr><br>
-                        <div class="review-display">
-                            <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 review-card">
-                                <% for (const review of listing.review) { %>
-                                    <div class="card text-dark bg-light mb-3" style="max-width: 30rem; width: 30rem;">
-                                        <div class="card-headers" style="height: 3rem;">
-                                            <div class="row">
-                                                <div class="rating-container col-4">
-                                                    <div class="rating" data-rating="<%= review.rating%>"></div>
-                                                </div>
-                                                <p id="rating-text" class="col-md-4 rating-status">
-                                                    <%= review.rating%>/5
-                                                </p>
+                                <div class="col-md-8">
+                                    <form action="/listing/<%= listing._id %>?_method=delete" method="post">
+                                        <a onclick="this.parentNode.submit();" class="card-link">Delete listing</a>
+                                    </form>
+                                </div>
+                            </div>
+                            <% } %>
+                                <br><br>
+                                <% if(user) { %>
+                                    <div class="review col-md-8">
+                                        <form action="/listing/<%=listing._id%>/reviews" method="post" novalidate
+                                            class="needs-validation">
+                                            <label for="review" class="form-label">
+                                                <h5>Leave a review</h5>
+                                            </label>
+                                            <textarea name="review[comment]" class="form-control " id="review" rows="3"
+                                                required></textarea>
+                                            <div class="card-rating">
+                                                <span onclick="gfg(1)" class="star">★
+                                                </span>
+                                                <span onclick="gfg(2)" class="star">★
+                                                </span>
+                                                <span onclick="gfg(3)" class="star">★
+                                                </span>
+                                                <span onclick="gfg(4)" class="star">★
+                                                </span>
+                                                <span onclick="gfg(5)" class="star">★
+                                                </span>
+                                                <input type="hidden" id="ratingInput" name="review[rating]" value="0">
+                                                <h6 id="output">
+                                                    Rating is: 0/5
+                                                </h6>
+                                                <button class="btn-dark offset-4">submit
+                                                </button>
                                             </div>
-                                        </div>
-                                        <hr>
-                                        <div class="card-body">
-                                            <h5 class="card-title dis-card-title">
-                                                <div class="time">
-                                                    <%= review.created_at.toString().split(" ")[4]%>
-                                        </div>
-                                        <div class=" date">
-                                                        <%= review.created_at.toString().split(" ").slice(0,4).join(" ") %>
-                                        </div>
-                            <form action=" /listing/<%=listing._id %>/reviews/<%=review._id%>?_method=delete"
-                                                                method="post">
-                                                                <a onclick="this.parentNode.submit();"
-                                                                    class="card-link">Delete
-                                                                    review</a>
-                                                                </form>
-                                            </h5>
-                                            <p class=" card-des">
-                                                <%=review.comment%>
-                                            </p>
-                                        </div>
+                                        </form>
                                     </div>
                                     <% } %>
-                            </div>
-                        </div>
+                                        <br>
+                                        <hr><br>
+                                        <div class="review-display">
+                                            <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 review-card">
+                                                <% for (const review of listing.review) { %>
+                                                    <div class="card text-dark bg-light mb-3"
+                                                        style="max-width: 30rem; width: 30rem;">
+                                                        <div class="card-headers" style="height: 3rem;">
+                                                            <div class="row">
+                                                                <div class="rating-container col-4">
+                                                                    <div class="rating"
+                                                                        data-rating="<%= review.rating%>"></div>
+                                                                </div>
+                                                                <p id="rating-text" class="col-2 rating-status">
+                                                                    <%= review.rating%>/5
+                                                                </p>
+                                                                <div class="review_auther rating-status col-6">
+                                                                    <h6>
+                                                                        @<i>
+                                                                            <%=review.auther.username%>
+                                                                        </i>
+                                                                    </h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <hr>
+                                                        <div class="card-body">
+                                                            <h5 class="card-title dis-card-title">
+                                                                <div class="time">
+                                                                    <%= review.created_at.toString().split(" ")[4]%>
+                                        </div>
+                                        <div class=" date">
+                                                                        <%= review.created_at.toString().split(" ").slice(0,4).join(" ") %>
+                                        </div>
+                                        <% if(user && user._id.equals(review.auther._id)) {%>
+                            <form action=" /listing/<%=listing._id %>/reviews/<%=review._id%>?_method=delete"
+                                                                                method="post">
+                                                                                <a onclick="this.parentNode.submit();"
+                                                                                    class="card-link">Delete
+                                                                                    review</a>
+                                                                                </form>
+                                                                                <% } %>
+                                                            </h5>
+                                                            <p class=" card-des">
+                                                                <%=review.comment%>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <% } %>
+                                            </div>
+                                        </div>
                     </div>
                 </div>
             </div>

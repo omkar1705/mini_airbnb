@@ -24,7 +24,13 @@ const listning_schema = new schema({
             type: schema.Types.ObjectId,
             ref: "review",
         }
-    ]
+    ],
+
+    owner:
+    {
+        type: schema.Types.ObjectId,
+        ref: "user"
+    }
 });
 
 //second method with post middlewere

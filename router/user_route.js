@@ -2,40 +2,27 @@ const express = require("express");
 const route = express.Router({ mergeParams: true });
 const ExpressError = require("../utils/ExpressError.js");
 const wrapAsync = require("../utils/wrapAsync.js");
-const user = require("../models/user.js");
 const passport = require("passport");
-const passport_local = require("passport-local");
+const { saveredirecturl } = require("../middlewere.js");
+const usercontroller = require("../controllers/user.js");
 
 
+//user signup of login page route
+route.get("/signup_login", usercontroller.sign_up_in)
+
+//user signup page to db store route
+route.post("/signup", wrapAsync(usercontroller.signup_to_db_post))
 
 
-route.get("/signup_login", (req, res) => {
-    res.render("signin_up");
-})
+//user login page to authenticate route
+route.post("/login", saveredirecturl, passport.authenticate("local", {
+    failureRedirect: "/user/signup_login",
+    failureFlash: true
+}), wrapAsync(usercontroller.login_auth))
 
-route.post("/signup", wrapAsync(async (req, res) => {
-    try {
-        let { username, email, user_pass } = req.body;
-        console.log(username, email, user_pass);
-        const new_user = new user({
-            username,
-            email,
-        })
-        console.log(await user.register(new_user, user_pass));
-        req.flash("success", "you have registered successfully :) ");
-        res.redirect("/listing");
-    } catch (error) {
-        req.flash("error", error.message);
-        res.redirect("/user/signup_login");
-    }
+//userlogout route
+route.get("/logout", usercontroller.logout)
 
-}))
-
-
-route.post("/login", passport.authenticate("local", { failureRedirect: "/user/signup_login", failureFlash: true }), wrapAsync(async (req, res) => {
-    req.flash("success", "wellcome to wanderlust !!");
-    res.redirect("/listing");
-}))
 
 
 

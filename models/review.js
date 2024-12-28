@@ -14,6 +14,10 @@ const rating_schema = new schema({
         type: Date,
         default: Date.now()
     },
+    auther: {
+        type: schema.Types.ObjectId,
+        ref: "user",
+    }
 });
 
 module.exports = mongoose.model("review", rating_schema);

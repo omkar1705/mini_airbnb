@@ -59,6 +59,7 @@ passport.deserializeUser(user.deserializeUser());//removes the user credentials 
 app.use((req, res, next) => {
     res.locals.flash = req.session.flash || {};
     delete req.session.flash; // Clear flash messages after they're displayed
+    res.locals.user = req.user;
     next();
 });
 

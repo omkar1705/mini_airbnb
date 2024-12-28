@@ -1,14 +1,7 @@
-<nav
-  class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top"
->
+<nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"></i></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavAltMarkup"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -16,6 +9,16 @@
         <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/listing">all listing</a>
         <a class="nav-link" href="/listing/new">Add new listing</a>
+      </div>
+      <div class="ms-auto">
+        <% if (user) { %>
+          <span class="navbar-text me-3">Welcome,<b>
+              <%= user.username %>
+            </b> </span>
+          <a class="btn btn-outline-danger" href="/user/logout">Logout</a>
+          <% } else { %>
+            <a class="btn btn-outline-success" href="/user/signup_login">Sign Up/ Log in</a>
+            <% } %>
       </div>
     </div>
   </div>
