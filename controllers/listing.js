@@ -27,8 +27,11 @@ module.exports.show_listing = async (req, res) => {
 }
 
 module.exports.new_listing_post = async (req, res) => {
+    let url = req.file.path;
+    let filename = req.file.filename;
     const new_listing = new listing(req.body.listing);
     new_listing.owner = req.user._id;
+    new_listing.image = { url, filename };
     await new_listing.save();
     req.flash("success", "New Listing is added!");
     res.redirect("/listing");
@@ -41,12 +44,22 @@ module.exports.edit_listing_get = async (req, res) => {
         req.flash("error", "listing that u are tyring to acces is not available");
         return res.redirect("/listing");
     }
-    res.render("edit_post.ejs", { listing: edit_listing });
+    let og_image = edit_listing.image.url;
+    og_image = og_image.replace("/upload", "/upload/w_250");
+    res.render("edit_post.ejs", { listing: edit_listing, url: og_image });
 }
 
 module.exports.edit_listing_patch = async (req, res) => {
+
     let { id } = req.params;
-    await listing.findByIdAndUpdate(id, { ...req.body.listing });
+    let listing_ = await listing.findByIdAndUpdate(id, { ...req.body.listing });
+    if (typeof req.file != "undefined") {
+        let url = req.file.path;
+        let filename = req.file.filename;
+        listing_.image = { url, filename };
+        await listing_.save();
+    }
+
     req.flash("success", "Listing is edited");
     res.redirect(`/listing/${id}`);
 }

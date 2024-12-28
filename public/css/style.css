@@ -206,3 +206,10 @@ body {
 .review_auther h6 {
     float: right;
 }
+
+.preview-img {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+}

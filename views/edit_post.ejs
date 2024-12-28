@@ -2,37 +2,50 @@
     <br><br>
     <div class="row">
         <div class="col-8 offset-2">
-        <h2 >Edit your listing</h2>
-        <form action="/listing/edit/<%=listing._id%>?_method=patch" method="post" novalidate class="needs-validation">
-            <div>
-                <label for="new-title" class="form-label">Email address</label>
-                <input type="text" value="<%= listing.title %>" class="form-control" id="new-title" name="listing[title]" placeholder="enter the title of the post" required>
-                <div class="valid-feedback">all looks good</div>
-                <div class="invalid-feedback">plz fill this</div>
-                <br>
-                <label for="new-des" class="form-label">Description</label>
-                <textarea name="listing[description]" class="form-control" id="new-des" placeholder="enter the discription of the post" required><%= listing.description %></textarea>
-                <br>
-                <label for="new-price" class="form-price">Price</label>
-                <input type="number" class="form-control" id="new-price" value="<%= listing.price %>" name="listing[price]" placeholder="enter the price of the post" required>
-                <br>
-                <label for="new-image" class="form-label">Image url</label>
-                <input type="text" class="form-control" id="new-image" value="<%= listing.image %>" name="listing[image]" placeholder="enter the url of the post images">
-                <br>
-                <div class="row">
-                    <div class="col-md-4">
-                        <label for="new-loc" class="form-label">location</label>
-                        <input type="text" class="form-control" value="<%= listing.location %>" id="new-loc" name="listing[location]" placeholder="enter the location of the post" required>
+            <h2>Edit your listing</h2>
+            <form action="/listing/edit/<%=listing._id%>?_method=patch" method="post" novalidate
+                class="needs-validation" enctype="multipart/form-data">
+                <div>
+                    <label for="new-title" class="form-label">Email address</label>
+                    <input type="text" value="<%= listing.title %>" class="form-control" id="new-title"
+                        name="listing[title]" placeholder="enter the title of the post" required>
+                    <div class="valid-feedback">all looks good</div>
+                    <div class="invalid-feedback">plz fill this</div>
+                    <br>
+                    <label for="new-des" class="form-label">Description</label>
+                    <textarea name="listing[description]" class="form-control" id="new-des"
+                        placeholder="enter the discription of the post" required><%= listing.description %></textarea>
+                    <br>
+                    <label for="new-price" class="form-price">Price</label>
+                    <input type="number" class="form-control" id="new-price" value="<%= listing.price %>"
+                        name="listing[price]" placeholder="enter the price of the post" required>
+                    <div class="row">
+                        <div class="col-8 preview-img">
+                            <label for="new-image" class="form-label">Image url</label>
+                            <input type="file" class="form-control" id="new-image" value="<%= listing.image.filename %>"
+                                name="listing[image]">
+                        </div>
+                        <div class="col">
+                            <p>Previosly Uploded Image</p>
+                            <img src="<%=url%>" alt="<%= listing.image.filename %>" style="width: 15vw;">
+                        </div>
                     </div>
-                    <div class="col-md-8">
-                        <label for="new-country" class="form-label">Country</label>
-                        <input type="text" class="form-control" id="new-country" value="<%= listing.country %>" name="listing[country]" placeholder="enter the country of the post" required>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="new-loc" class="form-label">location</label>
+                            <input type="text" class="form-control" value="<%= listing.location %>" id="new-loc"
+                                name="listing[location]" placeholder="enter the location of the post" required>
+                        </div>
+                        <div class="col-md-8">
+                            <label for="new-country" class="form-label">Country</label>
+                            <input type="text" class="form-control" id="new-country" value="<%= listing.country %>"
+                                name="listing[country]" placeholder="enter the country of the post" required>
+                        </div>
                     </div>
+                    <br>
+                    <button class="btn btn-dark">click to submit</button>
+                    <br><br><br>
                 </div>
-                <br>
-                <button class="btn btn-dark">click to submit</button>
-                <br><br><br>
+            </form>
         </div>
-        </form>
-    </div>
     </div>

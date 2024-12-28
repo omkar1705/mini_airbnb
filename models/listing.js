@@ -12,9 +12,8 @@ const listning_schema = new schema({
     },
     description: String,
     image: {
-        type: String,
-        default: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Anatomy_of_a_Sunset-2.jpg/1920px-Anatomy_of_a_Sunset-2.jpg",
-        set: v => v === "" ? "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Anatomy_of_a_Sunset-2.jpg/1920px-Anatomy_of_a_Sunset-2.jpg" : v,
+        url: String,
+        filename: String,
     },
     price: Number,
     location: String,
