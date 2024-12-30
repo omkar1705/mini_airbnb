@@ -79,9 +79,7 @@ app.use((req, res, next) => {
 app.listen(8080);
 
 // RUST APIs 
-app.get("/", (req, res) => {
-    res.send("hi");
-})
+
 
 //index listing route
 app.use("/listing", listen_route);

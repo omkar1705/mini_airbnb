@@ -12,7 +12,80 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
                 <% } %>
-                    <h1>all listings</h1>
+                    <div class="row nav_filter">
+                        <div class="filters_listing col-9">
+                            <div class="filter">
+                                <div><img
+                                        src="https://a0.muscache.com/pictures/aaa02c2d-9f0d-4c41-878a-68c12ec6c6bd.jpg"
+                                        alt="farm">
+                                </div>
+                                <span>Farm</span>
+                            </div>
+                            <div class="filter">
+                                <div><img
+                                        src="https://a0.muscache.com/pictures/3fb523a0-b622-4368-8142-b5e03df7549b.jpg"
+                                        alt="pools">
+                                </div>
+                                <span>Amezing pools</span>
+                            </div>
+                            <div class="filter">
+                                <div><img
+                                        src="	https://a0.muscache.com/pictures/7630c83f-96a8-4232-9a10-0398661e2e6f.jpg"
+                                        alt="Rooms">
+                                </div>
+                                <span>Rooms</span>
+                            </div>
+                            <div class="filter">
+                                <div><img
+                                        src="https://a0.muscache.com/pictures/aaa02c2d-9f0d-4c41-878a-68c12ec6c6bd.jpg"
+                                        alt="OMG">
+                                </div>
+                                <span>OMG!</span>
+                            </div>
+                            <div class="filter">
+                                <div><img
+                                        src="https://a0.muscache.com/pictures/248f85bf-e35e-4dc3-a9a1-e1dbff9a3db4.jpg"
+                                        alt="">
+                                </div>
+                                <span>Top of the world</span>
+                            </div>
+                            <div class="filter">
+                                <div><img
+                                        src="https://a0.muscache.com/pictures/5cdb8451-8f75-4c5f-a17d-33ee228e3db8.jpg"
+                                        alt="pools">
+                                </div>
+                                <span>Windmills</span>
+                            </div>
+                            <div class="filter">
+                                <div><img
+                                        src="	https://a0.muscache.com/pictures/3b1eb541-46d9-4bef-abc4-c37d77e3c21b.jpg"
+                                        alt="pools">
+                                </div>
+                                <span>Amazing views</span>
+                            </div>
+                            <div class="filter">
+                                <div><img
+                                        src="	https://a0.muscache.com/pictures/bcd1adc0-5cee-4d7a-85ec-f6730b0f8d0c.jpg"
+                                        alt="pools">
+                                </div>
+                                <span>Beachfront</span>
+                            </div>
+                            <div class="filter">
+                                <div><img
+                                        src="	https://a0.muscache.com/pictures/677a041d-7264-4c45-bb72-52bff21eb6e8.jpg"
+                                        alt="pools">
+                                </div>
+                                <span>Lackfront</span>
+                            </div>
+                        </div>
+                        <button type="button" class="tax-btn col">
+                            <div class="form-check-reverse form-switch dis_tax" id="dis_tax">
+                                <label class="form-check-label" for="flexSwitchCheckReverse">Display Taxes</label>
+                                <input class="form-check-input check" type="checkbox" id="flexSwitchCheckReverse">
+                            </div>
+                        </button>
+                    </div>
+                    <hr>
                     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
                         <% for (const listing of listings) { %>
                             <a href="/listing/<%=listing._id%>" class="card-a">
@@ -32,6 +105,7 @@
                                         </div>
                                         <div class="card-price">
                                             &#8377 <%=listing.price.toLocaleString('en-IN')%>
+                                                <i class="tax">&nbsp;&nbsp;+18% GSt</i>
                                         </div>
                                         </p>
                                     </div>

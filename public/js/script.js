@@ -22,6 +22,9 @@
 
 
 
+
+
+
 // Access the stars
 let stars = document.getElementsByClassName("star");
 let output = document.getElementById("output");
@@ -89,3 +92,29 @@ setTimeout(() => {
     setTimeout(() => flashMessage.remove(), 500); // Remove it after fading out
   }
 }, 3000); // 3000ms = 3 seconds
+
+
+
+let taxswitch = document.getElementById("flexSwitchCheckReverse");
+taxswitch.addEventListener("click", () => {
+  let taxinfo = document.getElementsByClassName("tax");
+  for (const tax of taxinfo) {
+    if (tax.style.display != "inline")
+      tax.style.display = "inline";
+    else
+      tax.style.display = "none";
+  }
+})
+
+const buttons = document.querySelectorAll(".search-com");
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    if (button.style.backgroundColor === "white") {
+      button.style.backgroundColor = ""; // Reset to none
+    } else {
+      // Reset all buttons first
+      buttons.forEach(btn => btn.style.backgroundColor = "");
+      button.style.backgroundColor = "white";
+    }
+  })
+});

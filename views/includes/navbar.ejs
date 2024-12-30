@@ -1,23 +1,57 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/"><i class="fa-regular fa-compass"></i></a>
+    <a class="navbar-brand" href="/listing"><i class="fa-regular fa-compass"></i></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" href="/">Home</a>
-        <a class="nav-link" href="/listing">all listing</a>
-        <a class="nav-link" href="/listing/new">Add new listing</a>
+        <a class="nav-link" href="/listing">Explore</a>
       </div>
-      <div class="ms-auto">
+      <div class="btn-group mx-auto search" role="group" aria-label="Button group with nested dropdown">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn search-com" data-bs-toggle="dropdown" aria-expanded="false">
+            Anywhere
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+          </ul>
+        </div>
+        <div class="vr my-auto"></div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn search-com" data-bs-toggle="dropdown" aria-expanded="false">
+            Any week
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+          </ul>
+        </div>
+        <div class="vr my-auto"></div>
+        <div class="btn-group" role="group">
+          <div type="button" class="btn search-com" data-bs-toggle="dropdown" aria-expanded="false">
+            <p>Add guests</p>
+            <button type="button" class="btn btn-danger search-btn my-auto">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              search
+            </button>
+          </div>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+            <li><a class="dropdown-item" href="#">Dropdown link</a></li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <a class="nav-link" href="/listing/new">Airbnb your home</a>
         <% if (user) { %>
           <span class="navbar-text me-3">Welcome,<b>
               <%= user.username %>
             </b> </span>
           <a class="btn btn-outline-danger" href="/user/logout">Logout</a>
           <% } else { %>
-            <a class="btn btn-outline-success" href="/user/signup_login">Sign Up/ Log in</a>
+            <a class="btn btn-outline-success" href="/user/signup_login"><b>Sign Up/ Log in</b></a>
             <% } %>
       </div>
     </div>

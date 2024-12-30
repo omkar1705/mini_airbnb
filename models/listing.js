@@ -29,7 +29,20 @@ const listning_schema = new schema({
     {
         type: schema.Types.ObjectId,
         ref: "user"
+    },
+
+    geometry: {
+        type: {
+            type: String,
+            enum: ['Point'],
+            require: true,
+        },
+        coordinates: {
+            type: [Number],
+            require: true,
+        }
     }
+
 });
 
 //second method with post middlewere

@@ -25,6 +25,7 @@ body {
 
 .nav-link {
     color: rgb(0, 0, 0) !important;
+    display: inline !important;
 }
 
 
@@ -212,4 +213,135 @@ body {
     justify-content: flex-start;
     flex-wrap: wrap;
     align-content: center;
+}
+
+#map {
+    height: 55vh;
+    width: 100%;
+}
+
+.mapboxgl-popup-content {
+    padding: 8px;
+    /* Decrease padding */
+    font-size: 11px;
+    /* Adjust text size */
+}
+
+/* Remove top margin for a tighter fit */
+.mapboxgl-popup-tip {
+    margin-bottom: -10px;
+    /* Pull the arrow closer */
+}
+
+img {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 5px;
+}
+
+.filter {
+    margin-right: 3rem;
+    opacity: 0.6;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.filter:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.filters_listing {
+    padding-top: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    align-items: center;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    max-width: 100%;
+    scroll-snap-type: x mandatory;
+}
+
+.filters_listing::-webkit-scrollbar {
+    height: 5px;
+    /* Optional: Style the scrollbar */
+}
+
+.filters_listing::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 3px;
+}
+
+.filters_listing::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+.dis_tax {
+    display: flex;
+    align-items: center;
+    padding-left: 0em !important;
+}
+
+.check {
+    margin-left: 5px !important;
+    margin-top: 0px !important;
+    width: 50px;
+    height: 20px;
+}
+
+.tax {
+    display: none;
+}
+
+.tax-btn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    width: 1rem;
+    height: 3rem;
+}
+
+.nav_filter {
+    display: flex;
+    align-items: center;
+}
+
+.search-com {
+    padding: 10px !important;
+    border-radius: 50px !important;
+    font-size: 15px !important;
+    width: 13rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+.search-com p {
+    margin: 0px;
+    padding-right: 8px;
+}
+
+.search {
+    border-radius: 50px;
+    background-color: #fe424226;
+}
+
+.vr {
+    border-left: 1px solid rgba(128, 128, 128, 0.655);
+    height: 40px;
+}
+
+.search-btn {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-radius: 50px !important;
+    text-align: center !important;
+    height: 40px;
+    padding: 0px;
 }

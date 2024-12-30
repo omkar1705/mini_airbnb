@@ -1,11 +1,11 @@
 const listing = require("../models/listing.js");
 const ExpressError = require("../utils/ExpressError.js");
-const wrapAsync = require("../utils/wrapAsync.js");
-const { listing_schema, review_schema } = require("../schema.js");
 const reviews = require("../models/review.js");
 const flash = require("connect-flash");
-const { isLogIn, isOwner, validate } = require("../middlewere.js");
-
+const mbxGeocodeing = require('@mapbox/mapbox-sdk/services/geocoding');
+const { query } = require("express");
+const map_token = process.env.MAP_TOKEN;
+const geocodingClient = mbxGeocodeing({ accessToken: map_token });
 
 module.exports.home = async (req, res) => {
     res.render("home.ejs", { listings: await listing.find() });
@@ -27,12 +27,19 @@ module.exports.show_listing = async (req, res) => {
 }
 
 module.exports.new_listing_post = async (req, res) => {
+    let geo_responce = await geocodingClient
+        .forwardGeocode({
+            query: `${req.body.listing.location},${req.body.listing.country}`,
+            limit: 2,
+        })
+        .send();
     let url = req.file.path;
     let filename = req.file.filename;
     const new_listing = new listing(req.body.listing);
     new_listing.owner = req.user._id;
     new_listing.image = { url, filename };
-    await new_listing.save();
+    new_listing.geometry = geo_responce.body.features[0].geometry;
+    console.log(await new_listing.save());
     req.flash("success", "New Listing is added!");
     res.redirect("/listing");
 }
