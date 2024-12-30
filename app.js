@@ -9,6 +9,7 @@ const methode = require("method-override");
 const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");
+const MongoStore = require('connect-mongo');
 const flash = require("connect-flash");
 const passport = require("passport");
 const passport_local = require("passport-local");
@@ -24,7 +25,9 @@ main()
     .catch(err => console.log(err));
 
 async function main() {
-    await mongooes.connect('mongodb://127.0.0.1:27017/wanderlust');
+
+    // await mongooes.connect('mongodb://127.0.0.1:27017/wanderlust');
+    await mongooes.connect(process.env.ATLASDB_URL);
 }
 
 // express uses
@@ -36,8 +39,18 @@ app.use(methode("_method"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "/public")));
 
+const session_store = MongoStore.create({
+    mongoUrl: process.env.ATLASDB_URL,
+    crypto: {
+        secret: process.env.SOLTING,
+    },
+    touchAfter: 24 * 60 * 60 * 1000,
+});
+
+
 const session_option = {
-    secret: "secretcode",
+    store: session_store,
+    secret: process.env.SOLTING,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -46,7 +59,10 @@ const session_option = {
     }
 };
 
+
+
 app.use(session(session_option));
+
 app.use(flash());
 
 
