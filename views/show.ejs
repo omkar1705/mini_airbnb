@@ -21,7 +21,8 @@
                     </div>
                     <div class="owner card-des offset-10">
                         <h6><i>
-                                created by @<%=listing.owner.username %>
+                                //created by @<%=listing.owner.username %>
+                                created by @<%= listing.owner ? listing.owner.username : "Unknown" %>
                             </i>
                         </h6>
                     </div>
