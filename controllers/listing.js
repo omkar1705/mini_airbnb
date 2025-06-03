@@ -23,6 +23,7 @@ module.exports.show_listing = async (req, res) => {
         req.flash("error", "wrong listing id or listing is deleted");
         res.redirect("/listing");
     }
+    console.log(detail_listing);
     res.render("show.ejs", { listing: detail_listing });
 }
 
